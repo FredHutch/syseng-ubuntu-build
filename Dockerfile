@@ -19,6 +19,7 @@ RUN apt-get -qq install curl \
                         unzip zip \
                         apt-transport-https lsb-release software-properties-common dirmngr \
                         awscli
+WORKDIR /root
 
 # Install docker-compose
 RUN curl -sL "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
