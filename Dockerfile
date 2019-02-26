@@ -58,3 +58,6 @@ RUN curl -sL https://releases.hashicorp.com/packer/1.3.4/packer_1.3.4_linux_amd6
 RUN apt-get install -y libssl1.0.0 libicu60 liblttng-ust0 && \
     curl -sL https://github.com/PowerShell/PowerShell/releases/download/v6.1.2/powershell_6.1.2-1.ubuntu.18.04_amd64.deb -o pwsh.deb && \
     dpkg -i pwsh.deb && apt-get -qq install -f && rm pwsh.deb
+
+# Install latest Ansible
+RUN apt-add-repository --yes --update ppa:ansible/ansible && apt-get -qq install ansible 

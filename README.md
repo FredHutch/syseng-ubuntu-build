@@ -23,6 +23,7 @@ Generic Ubuntu 18.04 based build environment with batteries included for use in 
 - Aws-cli 1.14.44
 - Azure-cli 2.0.56
 - Vagrant 2.2.3
+- Ansible 2.7+
 
 ### Misc
 - curl
@@ -32,3 +33,4 @@ Generic Ubuntu 18.04 based build environment with batteries included for use in 
 - gcc
 - rsync
 - jq
+- zip / unzip
