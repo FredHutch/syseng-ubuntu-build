@@ -8,6 +8,7 @@ Generic Ubuntu 18.04 based build environment with batteries included for use in 
 - Go 1.11.5
 - Perl 5.26.1
 - PowerShell Core 6.1.2
+- JavaScript (Node 10.15.1)
 
 ### Tools 
 - Packer v1.3.4
@@ -24,6 +25,7 @@ Generic Ubuntu 18.04 based build environment with batteries included for use in 
 - Azure-cli 2.0.56
 - Vagrant 2.2.3
 - Ansible 2.7+
+- NPM
 
 ### Misc
 - curl

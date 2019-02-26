@@ -61,3 +61,10 @@ RUN apt-get install -y libssl1.0.0 libicu60 liblttng-ust0 && \
 
 # Install latest Ansible
 RUN apt-add-repository --yes --update ppa:ansible/ansible && apt-get -qq install ansible 
+
+# Install Nodejs 10.15 LTS
+RUN curl -sL https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz -o nodejs.tar.xz && \
+    mkdir -p /usr/local/lib/nodejs && \
+    tar -xJf nodejs.tar.xz -C /usr/local/lib/nodejs && rm -rf nodejs.tar.xz && \
+    echo "export PATH=$PATH:/usr/local/lib/nodejs/node-v10.15.1-linux-x64/bin" >> ~/.bashrc
+
