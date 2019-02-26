@@ -1,6 +1,7 @@
 FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
+SHELL ["/bin/bash", "-c"]
 
 RUN apt-get -qq update
 RUN apt-get -qq install curl \
@@ -19,6 +20,7 @@ RUN apt-get -qq install curl \
                         unzip zip \
                         apt-transport-https lsb-release software-properties-common dirmngr \
                         awscli
+                        
 WORKDIR /root
 
 # Install docker-compose
@@ -66,5 +68,4 @@ RUN apt-add-repository --yes --update ppa:ansible/ansible && apt-get -qq install
 RUN curl -sL https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz -o nodejs.tar.xz && \
     mkdir -p /usr/local/lib/nodejs && \
     tar -xJf nodejs.tar.xz -C /usr/local/lib/nodejs && rm -rf nodejs.tar.xz && \
-    echo "export PATH=$PATH:/usr/local/lib/nodejs/node-v10.15.1-linux-x64/bin" >> ~/.bashrc
-
+    echo "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/lib/nodejs/node-v10.15.1-linux-x64/bin" >> ~/.bashrc
