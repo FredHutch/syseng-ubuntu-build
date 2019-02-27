@@ -31,9 +31,9 @@ RUN curl -sL "https://github.com/docker/compose/releases/download/1.23.2/docker-
 RUN curl -sL https://download.docker.com/linux/static/stable/x86_64/docker-18.06.1-ce.tgz -o docker.tar.gz && \
     tar -zxf docker.tar.gz && cp docker/docker /usr/local/bin/ && rm -rf docker && rm docker.tar.gz
 
-# Install the Chef development kit
-RUN curl -sL https://packages.chef.io/files/stable/chefdk/3.7.23/ubuntu/18.04/chefdk_3.7.23-1_amd64.deb -o chefdk.deb && \
-    dpkg -i chefdk.deb && apt-get -qq install -f && rm chefdk.deb
+# Install Chef Workstation (replaces ChefDK)
+RUN curl -Ls https://packages.chef.io/files/stable/chef-workstation/0.2.48/ubuntu/18.04/chef-workstation_0.2.48-1_amd64.deb -o chef-workstation.deb && \
+    dpkg -i chef-workstation.deb && apt-get -qq install -f && rm chef-workstation.deb
 
 # Install Golang 1.11
 RUN curl -sL https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz -o go.tar.gz && \
@@ -69,3 +69,5 @@ RUN curl -sL https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz -o 
     mkdir -p /usr/local/lib/nodejs && \
     tar -xJf nodejs.tar.xz -C /usr/local/lib/nodejs && rm -rf nodejs.tar.xz && \
     echo "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/lib/nodejs/node-v10.15.1-linux-x64/bin" >> ~/.bashrc
+
+
