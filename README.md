@@ -15,6 +15,7 @@ Generic Ubuntu 18.04 based build environment with batteries included for use in 
 - Docker (client) 18.06.1-ce
 - Docker-compose 1.23.2
 - Terraform v0.11.11
+- Terragrunt v0.18.2
 - Chef Workstation: 0.2.48 (Replaces the ChefDK)
   - chef-run: 0.2.8
   - chef-client: 14.10.9
