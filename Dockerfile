@@ -71,6 +71,6 @@ RUN curl -sL https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz -o 
     echo "export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/lib/nodejs/node-v10.15.1-linux-x64/bin" >> ~/.bashrc
 
 # Install Terragrunt
-RUN curl -sL https://github.com/gruntwork-io/terragrunt/releases/download/v0.18.2/terragrunt_linux_amd64 -o terragrunt &&
-    chmod +x terragrunt &&
+RUN curl -sL https://github.com/gruntwork-io/terragrunt/releases/download/v0.18.2/terragrunt_linux_amd64 -o terragrunt && \
+    chmod +x terragrunt && \
     cp terragrunt /usr/local/bin/
