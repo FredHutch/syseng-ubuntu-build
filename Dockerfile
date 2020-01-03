@@ -12,6 +12,8 @@ RUN apt-get -qq install curl \
                         wget \
                         python python-pip \
                         python3 python3-pip \
+                        python-boto3 \
+                        python3-boto3 \
                         jq \
                         make \
                         gcc \
@@ -40,7 +42,7 @@ RUN curl -sL https://dl.google.com/go/go1.11.5.linux-amd64.tar.gz -o go.tar.gz &
     tar -zxf go.tar.gz && mv go /usr/local && rm -rf go && rm go.tar.gz && echo "export PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
 
 # Install Terraform 
-RUN curl -sL https://releases.hashicorp.com/terraform/0.12.7/terraform_0.12.7_linux_amd64.zip -o terraform.zip && \
+RUN curl -sL https://releases.hashicorp.com/terraform/0.12.18/terraform_0.12.18_linux_amd64.zip -o terraform.zip && \
     unzip terraform.zip && mv terraform /usr/local/bin && rm terraform.zip
 
 # Install Vagrant 
